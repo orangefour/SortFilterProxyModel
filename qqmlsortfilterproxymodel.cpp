@@ -231,6 +231,11 @@ void QQmlSortFilterProxyModel::updateRoles()
     updateSortRole();
 }
 
+int QQmlSortFilterProxyModel::getSourceIndex(int row)
+{
+    return mapToSource(index(row, 0)).row();
+}
+
 QVariantMap QQmlSortFilterProxyModel::modelDataMap(const QModelIndex& modelIndex) const
 {
     QVariantMap map;

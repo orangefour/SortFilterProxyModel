@@ -69,6 +69,9 @@ public:
     QVariant sourceData(const QModelIndex& sourceIndex, const QString& roleName) const;
     QVariant sourceData(const QModelIndex& sourceIndex, int role) const;
 
+public slots:
+    int getSourceIndex(int index);
+
 signals:
     void countChanged();
 
