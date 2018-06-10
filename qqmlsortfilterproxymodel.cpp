@@ -159,6 +159,12 @@ QVariant QQmlSortFilterProxyModel::sourceData(const QModelIndex &sourceIndex, in
     return sourceModel()->data(sourceIndex, role);
 }
 
+void QQmlSortFilterProxyModel::setSourceData(int idx, const QVariant& value, const QString& roleName) const {
+  int role = sourceModel()->roleNames().key(roleName.toUtf8());
+  QModelIndex sourceIndex = mapToSource(index(idx, 0));
+  sourceModel()->setData(sourceIndex, value, role);
+}
+
 bool QQmlSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
     if (!m_completed)

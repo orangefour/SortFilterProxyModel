@@ -71,6 +71,7 @@ public:
 
 public slots:
     int getSourceIndex(int index);
+    void setSourceData(int idx, const QVariant& value, const QString& roleName) const;
 
 signals:
     void countChanged();
